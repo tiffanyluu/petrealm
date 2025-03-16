@@ -1,4 +1,4 @@
-const petController = require('../models/pet-model.js');
+const petController = require('../models');
 
 const createResponse = (statusCode, body) => ({
   statusCode,
@@ -37,24 +37,19 @@ module.exports.getPetById = async (event) => {
 };
 
 module.exports.addPet = async (event) => {
-  let body;
-  try {
-      body = JSON.parse(event.body);
-  } catch (err) {
-      return createResponse(400, { message: "Invalid JSON body" });
-  }
-  const { name, type } = body;
-  if (!name || !type) {
-      return createResponse(400, { message: "Pet name and type are required" });
+  const { name } = JSON.parse(event.body);
+  if (!name) {
+    return createResponse(400, { message: 'Pet name is required' });
   }
   try {
-      const newPet = await petController.addPet(name, type);
-      return createResponse(201, newPet);
+    const newPet = await petController.addPet(name);
+    return createResponse(201, { message: 'New pet added', pet: newPet });
   } catch (error) {
-      console.error('Error adding pet:', error);
-      return createResponse(500, { message: 'Error adding pet' });
+    console.error('Error adding pet:', error);
+    return createResponse(500, { message: 'Error adding pet' });
   }
 };
+
 
 
 module.exports.feedPet = async (event) => {

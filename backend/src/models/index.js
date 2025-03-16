@@ -1,4 +1,5 @@
-const pool = require('../config/db.js');
+const pool = require('../config');
+const petTypes = ["Dragon", "Unicorn", "Phoenix", "Griffin", "Pegasus"];
 
 // Get all pets
 const getAllPets = async () => {
@@ -25,12 +26,13 @@ const getPetById = async (id) => {
 };
 
 // Add a new pet
-const addPet = async (name, type) => {
-    if (!name || !type) throw new Error("Pet name and type are required");
+const addPet = async (name) => {
+    if (!name) throw new Error("Pet name is required");
+    const randomType = petTypes[Math.floor(Math.random() * petTypes.length)];
     try {
         const { rows } = await pool.query(
             'INSERT INTO public.pet_profiles (name, type, hunger, last_fed_at) VALUES ($1, $2, 100, NOW()) RETURNING *',
-            [name, type]
+            [name, randomType]
         );
         return rows[0];
     } catch (error) {

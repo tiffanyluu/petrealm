@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const petController = require('../models/pet-model.js');
+const petController = require('../models');
 
 // Define API routes, calling controller functions
 router.get('/pets', petController.getAllPets);

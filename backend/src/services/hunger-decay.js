@@ -1,5 +1,5 @@
-const pool = require('../config/db.js');
-const { logger, sendMetric } = require('../utils/logger.js');
+const pool = require('../config');
+const { logger, sendMetric } = require('../utils');
 
 exports.handler = async (event) => {
     logger.info('Hunger decay function started');
