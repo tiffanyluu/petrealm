@@ -1,4 +1,4 @@
-const petController = require('../models');
+const petController = require('../controllers');
 
 const createResponse = (statusCode, body) => ({
   statusCode,
