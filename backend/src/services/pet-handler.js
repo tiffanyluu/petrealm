@@ -1,0 +1,76 @@
+const petController = require('../models/pet-model.js');
+
+const createResponse = (statusCode, body) => ({
+  statusCode,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(body)
+});
+
+module.exports.getAllPets = async (event) => {
+  try {
+    const pets = await petController.getAllPets();
+    return createResponse(200, pets);
+  } catch (error) {
+    console.error('Error getting all pets:', error);
+    return createResponse(500, { message: 'Error getting all pets' });
+  }
+};
+
+module.exports.getPetById = async (event) => {
+  const id = parseInt(event.pathParameters.id, 10);
+  if (isNaN(id)) {
+    return createResponse(400, { message: "Invalid pet ID" });
+  }
+  try {
+    const pet = await petController.getPetById(id);
+    if (pet) {
+      return createResponse(200, pet);
+    } else {
+      return createResponse(404, { message: 'Pet not found' });
+    }
+  } catch (error) {
+    console.error(`Error getting pet by ID ${id}:`, error);
+    return createResponse(500, { message: 'Error getting pet by ID' });
+  }
+};
+
+module.exports.addPet = async (event) => {
+  let body;
+  try {
+      body = JSON.parse(event.body);
+  } catch (err) {
+      return createResponse(400, { message: "Invalid JSON body" });
+  }
+  const { name, type } = body;
+  if (!name || !type) {
+      return createResponse(400, { message: "Pet name and type are required" });
+  }
+  try {
+      const newPet = await petController.addPet(name, type);
+      return createResponse(201, newPet);
+  } catch (error) {
+      console.error('Error adding pet:', error);
+      return createResponse(500, { message: 'Error adding pet' });
+  }
+};
+
+
+module.exports.feedPet = async (event) => {
+  const id = parseInt(event.pathParameters.id, 10);
+  if (isNaN(id)) {
+    return createResponse(400, { message: 'Invalid pet ID' });
+  }
+  try {
+    const fedPet = await petController.feedPet(id);
+    if (fedPet) {
+      return createResponse(200, fedPet);
+    } else {
+      return createResponse(404, { message: 'Pet not found' });
+    }
+  } catch (error) {
+    console.error(`Error feeding pet with ID ${id}:`, error);
+    return createResponse(500, { message: 'Error feeding pet' });
+  }
+};

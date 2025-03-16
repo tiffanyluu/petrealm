@@ -15,9 +15,36 @@ package:
     - README.md
 
 functions:
+  getAllPets:
+    handler: backend/src/services/pet-handler.getAllPets
+    events:
+      - http:
+          path: pets
+          method: get
+          cors: true
+  getPetById:
+    handler: backend/src/services/pet-handler.getPetById
+    events:
+      - http:
+          path: pets/{id}
+          method: get
+          cors: true
+  addPet:
+    handler: backend/src/services/pet-handler.addPet
+    events:
+      - http:
+          path: pets
+          method: post
+          cors: true
+  feedPet:
+    handler: backend/src/services/pet-handler.feedPet
+    events:
+      - http:
+          path: pets/{id}/feed
+          method: post
+          cors: true
   hungerDecay:
     handler: backend/src/services/hunger-decay.handler
-    timeout: 30
     events:
       - schedule:
           rate: rate(1 hour)
@@ -26,6 +53,8 @@ provider:
   name: aws
   runtime: nodejs20.x
   region: us-east-2
+  deploymentBucket:
+    name: petrealm-serverless-deployments
   environment:
     DB_HOST: pets.c1asi2ku8ijs.us-east-2.rds.amazonaws.com
     DB_PORT: 5432
@@ -38,4 +67,6 @@ provider:
         - "logs:DescribeLogStreams"
         - "logs:CreateLogStream"
         - "logs:PutLogEvents"
+        - "rds:*"
+        - "cloudwatch:*"
       Resource: "arn:aws:logs:us-east-2:*:*"
