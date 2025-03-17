@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  experimental: {
-    appDir: true, // if using App Router (Next 13+)
-  },
+  // Other configs
+  experimental: {}
 }
 
-export default nextConfig
+export default nextConfig;
