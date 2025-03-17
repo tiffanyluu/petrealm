@@ -1,6 +1,9 @@
-// next.config.mjs
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  reactStrictMode: true,
+  experimental: {
+    appDir: true, // if using the App Router (Next 13+)
+  },
 }
 
-export default nextConfig
+module.exports = nextConfig
