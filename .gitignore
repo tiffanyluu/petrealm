@@ -8,3 +8,4 @@ npm-debug.log*
 *.pem 
 .DS_Store
 Thumbs.db
+.vercel
