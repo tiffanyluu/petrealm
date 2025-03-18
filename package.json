@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "serverless offline",
+    "dev": "nodemon --exec 'serverless offline --httpPort 3001'"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -9,5 +13,9 @@
     "serverless-plugin-optimize": "^4.2.1-rc.1",
     "winston": "^3.17.0",
     "winston-aws-cloudwatch": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "serverless-offline": "^14.4.0"
   }
 }
