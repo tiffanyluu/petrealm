@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { useParams } from "next/navigation";
+import FeedButton from '../../components/FeedButton.js';
 
 async function feedPet(id) {
     const res = await fetch(`http://localhost:3001/dev/pets/${id}/feed`, {
@@ -54,7 +55,7 @@ export default function PetPage() {
                 <h2>{pet.name}</h2>
                 <p>Type: {pet.type}</p>
                 <p>Hunger Level: {pet.hunger}</p>
-                <button onClick={handleFeedClick}>Feed</button>
+                <FeedButton onClick={handleFeedClick} />
             </div>
         </div>
     );

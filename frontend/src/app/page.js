@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import Link from "next/link";
+import PetCard from "./components/PetCard.js";
+import { useRouter } from 'next/navigation';
+
 
 export default function HomePage() {
     const [pets, setPets] = useState([]);
     const [loading, setLoading] = useState(true);
+    const router = useRouter();
 
     // fetch pets from backend
     useEffect(() => {
@@ -25,6 +28,7 @@ export default function HomePage() {
     
     //loading state
     if (loading) return <p>Loading pets...</p>;
+    
 
     //render pets
     return (
@@ -35,13 +39,13 @@ export default function HomePage() {
             ) : (
                 <div>
                     {pets.map((pet) => (
-                        <Link key={pet.id} href={`/pet/${pet.id}`} style={{ display: "block", margin: "10px 0" }}>
-                            <div style={{ border: "1px solid #ccc", padding: "10px", borderRadius: "8px" }}>
-                                <h2>{pet.name}</h2>
-                                <p>Type: {pet.type}</p>
-                                <p>Hunger Level: {pet.hunger}</p>
-                            </div>
-                        </Link>
+                        <PetCard
+                            key={pet.id}
+                            name={pet.name}
+                            type={pet.type}
+                            hunger={pet.hunger}
+                            onClick={() => router.push(`/pet/${pet.id}`)}
+                        />
                     ))}
                 </div>
             )}
