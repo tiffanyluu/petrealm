@@ -10,5 +10,12 @@ export default function ReleaseButton ({ petId, onRelease }) {
             alert("Failed to release pet");
         }
     };
-    return <button onClick={handleRelease} className='bg-red-500 text-white p-2 rounded'>Release</button>;
+    return (
+        <button 
+            onClick={handleRelease} 
+            className='bg-[#FF6B6B] text-white p-2 rounded-lg shadow-md hover:scale-105 transition-transform'
+        >
+            Release
+        </button>
+    );
 };

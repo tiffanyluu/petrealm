@@ -8,6 +8,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "framer-motion": "^12.5.0",
     "pg": "^8.14.0",
     "serverless": "^4.8.0",
     "serverless-plugin-optimize": "^4.2.1-rc.1",
