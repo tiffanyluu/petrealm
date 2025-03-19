@@ -2,6 +2,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from "next/navigation";
 import FeedButton from '../../components/FeedButton.js';
+import PetImage from '../../components/PetImage.js';
+import ReleaseButton from '../../components/ReleaseButton.js';
+import Link from 'next/link';
 
 async function feedPet(id) {
     const res = await fetch(`http://localhost:3001/dev/pets/${id}/feed`, {
@@ -49,13 +52,20 @@ export default function PetPage() {
     if (loading) return <p>Loading...</p>;
     if (!pet) return <p>Pet not found</p>;
     return (
-        <div>
+        <div className='flex justify-center'>
             <h1>Pet Profile</h1>
             <div>
+              <PetImage type={pet.type} />
                 <h2>{pet.name}</h2>
                 <p>Type: {pet.type}</p>
                 <p>Hunger Level: {pet.hunger}</p>
                 <FeedButton onClick={handleFeedClick} />
+                <ReleaseButton petId={pet.id} onRelease={() => window.location.href = '/'} />
+            </div>
+            <div>
+            <Link href="/" className="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded">
+              Home
+            </Link>
             </div>
         </div>
     );

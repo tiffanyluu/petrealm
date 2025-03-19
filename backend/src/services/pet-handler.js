@@ -50,6 +50,22 @@ module.exports.addPet = async (event) => {
   }
 };
 
+module.exports.releasePet = async (event) => {
+  const { id } =event.pathParameters;
+  if (!id) {
+    return createResponse(400, { message: 'Pet ID is required' });
+  }
+  try {
+    const releasedPet = await petController.releasePet(id);
+    if (!releasedPet) {
+      return createResponse(404, { message: 'Pet not found' });
+    }
+    return createResponse(200, { message: 'Pet released', pet: releasedPet });
+  } catch (error) {
+    console.error('Error releasing pet:', error);
+    return createResponse(500, { message: 'Error releasing pet' });
+  }
+};
 
 
 module.exports.feedPet = async (event) => {

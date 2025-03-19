@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import PetCard from "./components/PetCard.js";
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 
 export default function HomePage() {
@@ -49,6 +50,9 @@ export default function HomePage() {
                     ))}
                 </div>
             )}
+            <Link href="/adopt">
+                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">Adopt a Pet</button>
+            </Link>
         </div>
     );
 }

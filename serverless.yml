@@ -46,6 +46,15 @@ functions:
           path: pets/{id}/feed
           method: post
           cors: true
+
+  releasePet:
+    handler: backend/src/services/pet-handler.releasePet
+    events:
+      - http:
+          path: pets/{id}
+          method: delete
+          cors: true
+
   hungerDecay:
     handler: backend/src/services/hunger-decay.handler
     events:
