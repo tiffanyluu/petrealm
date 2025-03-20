@@ -26,7 +26,7 @@ export default function AdoptPage() {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 p-4">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#B39DDB] to-[#AEEEEE] p-4">
             <form 
                 onSubmit={handleAdopt} 
                 className="bg-white shadow-md rounded-lg p-6 w-full max-w-sm border border-gray-200"

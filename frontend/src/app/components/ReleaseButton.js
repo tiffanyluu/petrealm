@@ -13,7 +13,7 @@ export default function ReleaseButton ({ petId, onRelease }) {
     return (
         <button 
             onClick={handleRelease} 
-            className='bg-[#FF6B6B] text-white p-2 rounded-lg shadow-md hover:scale-105 transition-transform'
+            className='bg-red-500 text-white p-2 rounded-lg shadow-md hover:scale-105 transition-transform'
         >
             Release
         </button>

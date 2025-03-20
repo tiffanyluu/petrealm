@@ -23,9 +23,9 @@ export default function HomePage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 p-4">
+        <div className="min-h-screen bg-gradient-to-br from-[#B39DDB] to-[#AEEEEE] p-4">
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-4xl font-bold text-black-700">PetRealm</h1>
+                <h1 className="text-4xl font-bold text-black drop-shadow-[0_0_6px_rgba(138,43,226,0.3)]">PetRealm</h1>
                 <Link href="/adopt">
                     <button className="bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 transition">Adopt a Pet</button>
                 </Link>

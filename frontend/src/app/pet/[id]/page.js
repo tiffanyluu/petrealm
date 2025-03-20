@@ -56,9 +56,9 @@ export default function PetPage() {
     if (loading) return <p>Loading...</p>;
     if (!pet) return <p>Pet not found</p>;
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 p-4 flex flex-col items-center">
-          <h1 className="text-4xl font-bold text-purple-700 mb-4">{pet.name}</h1>
-          <div className="bg-white border-4 border-purple-300 rounded-2xl shadow-lg p-6 w-full max-w-md">
+      <div className="min-h-screen bg-gradient-to-br from-[#B39DDB] to-[#AEEEEE] p-4 flex flex-col items-center">
+          <h1 className="text-4xl font-bold text-black-700 mb-4">{pet.name}</h1>
+          <div className="bg-white border-4 border-black-300 rounded-2xl shadow-lg p-6 w-full max-w-md">
               <div className="flex flex-col items-center">
                   <PetImage type={pet.type} isBouncing={isBouncing} />
                   <p className="text-lg text-gray-600">Type: {pet.type}</p>
@@ -68,12 +68,12 @@ export default function PetPage() {
                   <HungerBar hunger={pet.hunger} />
               </div>
               <div className="flex justify-between mt-6">
-                  <FeedButton petId={pet.id} onFeed={handleFeedClick} />
+                  <FeedButton petId={pet.id} onClick={handleFeedClick} />
                   <ReleaseButton petId={pet.id} onRelease={() => window.location.href = '/'} />
               </div>
               <button
                   onClick={() => router.push('/')}
-                  className="mt-4 w-full bg-purple-500 text-white py-2 px-4 rounded-md hover:bg-purple-600 transition"
+                  className="mt-4 w-full bg-purple-400 text-white py-2 px-4 rounded-md hover:bg-purple-600 transition"
               >
                   Home
               </button>

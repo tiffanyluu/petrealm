@@ -4,7 +4,7 @@ import PetImage from './PetImage.js';
 export default function PetCard({ name, type, hunger, onClick }) {
     return (
         <div 
-            className="flex flex-col items-center justify-center p-4 border-4 border-purple-300 rounded-2xl shadow-md hover:shadow-lg transition cursor-pointer bg-white"
+            className="flex flex-col items-center justify-center p-4 border-4 border-black-300 rounded-2xl shadow-md hover:shadow-lg transition cursor-pointer bg-white"
             onClick={onClick}
         >
             <PetImage type={type} />

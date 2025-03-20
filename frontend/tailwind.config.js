@@ -5,7 +5,11 @@ export default {
       "./src/app/components/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+          imfell: ['var(--font-im-fell-english)', 'serif'],
+        },
+      },
     },
     plugins: [],
   }
