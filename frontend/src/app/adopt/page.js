@@ -12,7 +12,7 @@ export default function AdoptPage() {
             alert('Please enter a name for your new pet.');
             return;
         }
-        const response = await fetch('http://localhost:3001/dev/pets', {
+        const response = await fetch('https://4mmbm863x4.execute-api.us-east-2.amazonaws.com/dev/pets', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name }),

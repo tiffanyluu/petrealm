@@ -85,3 +85,14 @@ module.exports.feedPet = async (event) => {
     return createResponse(500, { message: 'Error feeding pet' });
   }
 };
+
+module.exports.hungerDecay = async () => {
+  try {
+    await petController.hungerDecay();
+    return createResponse(200, { message: 'Hunger decay applied to all pets' });
+  } catch (error) {
+    console.error('Error applying hunger decay:', error);
+    return createResponse(500, { message: 'Error applying hunger decay' });
+  }
+};
+

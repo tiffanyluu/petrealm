@@ -16,31 +16,35 @@ package:
     - .env
     - .git/**
     - README.md
+    - .vscode/**
+    - "*.log"
+    - node_modules/aws-sdk/**
+    - frontend/**
 
 functions:
   getAllPets:
-    handler: backend/src/services/pet-handler.getAllPets
+    handler: backend/src/services/index.getAllPets
     events:
       - http:
           path: pets
           method: get
           cors: true
   getPetById:
-    handler: backend/src/services/pet-handler.getPetById
+    handler: backend/src/services/index.getPetById
     events:
       - http:
           path: pets/{id}
           method: get
           cors: true
   addPet:
-    handler: backend/src/services/pet-handler.addPet
+    handler: backend/src/services/index.addPet
     events:
       - http:
           path: pets
           method: post
           cors: true
   feedPet:
-    handler: backend/src/services/pet-handler.feedPet
+    handler: backend/src/services/index.feedPet
     events:
       - http:
           path: pets/{id}/feed
@@ -48,7 +52,7 @@ functions:
           cors: true
 
   releasePet:
-    handler: backend/src/services/pet-handler.releasePet
+    handler: backend/src/services/index.releasePet
     events:
       - http:
           path: pets/{id}
@@ -56,10 +60,10 @@ functions:
           cors: true
 
   hungerDecay:
-    handler: backend/src/services/hunger-decay.handler
+    handler: backend/src/services/index.hungerDecay
     events:
       - schedule:
-          rate: rate(1 hour)
+          rate: rate(3 hours)
 
 provider:
   name: aws

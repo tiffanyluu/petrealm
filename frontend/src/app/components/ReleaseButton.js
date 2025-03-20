@@ -1,6 +1,6 @@
 export default function ReleaseButton ({ petId, onRelease }) {
     const handleRelease = async () => {
-        const response = await fetch(`http://localhost:3001/dev/pets/${petId}`, {
+        const response = await fetch(`https://4mmbm863x4.execute-api.us-east-2.amazonaws.com/dev/pets/${petId}`, {
             method: "DELETE",      
         });
         if (response.ok) {

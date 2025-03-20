@@ -1,7 +1,7 @@
 const pool = require('../config');
 const { logger, sendMetric } = require('../utils');
 
-exports.handler = async (event) => {
+exports.hungerDecay = async (event) => {
     logger.info('Hunger decay function started');
     try {
         const {rowCount} = await pool.query(

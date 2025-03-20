@@ -7,7 +7,7 @@ import ReleaseButton from '../../components/ReleaseButton.js';
 import HungerBar from '../../components/HungerBar.js';
 
 async function feedPet(id) {
-    const res = await fetch(`http://localhost:3001/dev/pets/${id}/feed`, {
+    const res = await fetch(`https://4mmbm863x4.execute-api.us-east-2.amazonaws.com/dev/pets/${id}/feed`, {
         method: "POST"
     });
     if (!res.ok) {
@@ -28,7 +28,7 @@ export default function PetPage() {
     useEffect(() => {
       async function fetchPet() {
         try {
-          const res = await fetch(`http://localhost:3001/dev/pets/${params.id}`);
+          const res = await fetch(`https://4mmbm863x4.execute-api.us-east-2.amazonaws.com/dev/pets/${params.id}`);
           if (!res.ok) throw new Error(`Failed to fetch pet with ID ${params.id}`);
           const data = await res.json();
           setPet(data);
