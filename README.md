@@ -18,7 +18,6 @@
 - Node.js (Express.js)
 - PostgreSQL (AWS RDS)
 - AWS EventBridge + Lambda
-- Postman / cURL
 - AWS CloudWatch
 
 ### **Deployment & CI/CD**
