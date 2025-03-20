@@ -8,10 +8,11 @@ import { useRouter } from 'next/navigation';
 export default function HomePage() {
     const [pets, setPets] = useState([]);
     const router = useRouter();
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     useEffect(() => {
         const fetchPets = async () => {
-            const response = await fetch('https://4mmbm863x4.execute-api.us-east-2.amazonaws.com/dev/pets');
+            const response = await fetch(`${apiUrl}/pets`);
             if (response.ok) {
                 const data = await response.json();
                 setPets(data);

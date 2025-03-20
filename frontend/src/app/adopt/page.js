@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 export default function AdoptPage() {
     const [name, setName] = useState('');
     const router = useRouter();
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 
     const handleAdopt = async (e) => {
         e.preventDefault();
@@ -12,7 +14,7 @@ export default function AdoptPage() {
             alert('Please enter a name for your new pet.');
             return;
         }
-        const response = await fetch('https://4mmbm863x4.execute-api.us-east-2.amazonaws.com/dev/pets', {
+        const response = await fetch(`${apiUrl}/pets`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name }),

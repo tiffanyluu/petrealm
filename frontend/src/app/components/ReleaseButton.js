@@ -1,6 +1,8 @@
 export default function ReleaseButton ({ petId, onRelease }) {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
     const handleRelease = async () => {
-        const response = await fetch(`https://4mmbm863x4.execute-api.us-east-2.amazonaws.com/dev/pets/${petId}`, {
+        const response = await fetch(`${apiUrl}/pets/${petId}`, {
             method: "DELETE",      
         });
         if (response.ok) {
