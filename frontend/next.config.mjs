@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    output: 'export', // Ensures Next.js exports static files
+    trailingSlash: true, // Helps with Amplify routing
+  };
+  
+  export default nextConfig;
+  
