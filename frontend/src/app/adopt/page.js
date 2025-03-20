@@ -31,7 +31,7 @@ export default function AdoptPage() {
                 onSubmit={handleAdopt} 
                 className="bg-white shadow-md rounded-lg p-6 w-full max-w-sm border border-gray-200"
             >
-                <h1 className="text-2xl font-bold text-purple-700 mb-4 text-center">Adopt a Pet</h1>
+                <h1 className="text-2xl font-bold text-black-700 mb-4 text-center">Adopt a Pet</h1>
                 <div className="mb-4">
                     <label htmlFor="petName" className="block text-sm font-medium text-gray-700">Pet Name</label>
                     <input 
