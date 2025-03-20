@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-PetRealm is a virtual mythical pet simulation where players can adopt, care for, and interact with magical creatures. Each pet has a hunger system that gradually decreases over time, encouraging regular feeding to keep them happy and healthy. The game blends fantasy with simple mechanics, making it a fun and engaging experience
+PetRealm is a virtual mythical pet simulation where players can adopt, care for, and interact with magical creatures. Each pet has a hunger system that gradually decreases over time, encouraging regular feeding to keep them happy and healthy. The game blends fantasy with simple mechanics, making it a fun and engaging experience.
 
 ---
 
