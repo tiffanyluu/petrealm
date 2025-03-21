@@ -17,3 +17,4 @@ export default function PetCard({ name, type, hunger, onClick }) {
         </div>
     );
 }
+
