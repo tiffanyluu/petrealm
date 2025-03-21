@@ -13,6 +13,7 @@ export default function HomePage() {
     useEffect(() => {
         const fetchPets = async () => {
             const response = await fetch(`${apiUrl}/pets`);
+            console.log("API URL:", apiUrl);
             if (response.ok) {
                 const data = await response.json();
                 setPets(data);

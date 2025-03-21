@@ -3,7 +3,9 @@ const petController = require('../controllers');
 const createResponse = (statusCode, body) => ({
   statusCode,
   headers: {
-    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'https://petrealm.vercel.app',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+    'Access-Control-Allow-Headers': 'Content-Type',
   },
   body: JSON.stringify(body)
 });

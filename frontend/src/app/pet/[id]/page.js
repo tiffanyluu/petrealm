@@ -5,9 +5,10 @@ import FeedButton from '../../components/FeedButton.js';
 import PetImage from '../../components/PetImage.js';
 import ReleaseButton from '../../components/ReleaseButton.js';
 import HungerBar from '../../components/HungerBar.js';
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 async function feedPet(id) {
-    const res = await fetch(`https://.execute-api.us-east-2.amazonaws.com/dev/pets/${id}/feed`, {
+    const res = await fetch(`${apiUrl}/pets/${id}/feed`, {
         method: "POST"
     });
     if (!res.ok) {
@@ -24,7 +25,6 @@ export default function PetPage() {
     const [loading, setLoading] = useState(true);
     const [isBouncing, setIsBouncing] = useState(false);
     const router = useRouter();
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   
     useEffect(() => {
       async function fetchPet() {
