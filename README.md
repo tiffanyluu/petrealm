@@ -4,7 +4,7 @@
 
 PetRealm is a virtual mythical pet simulation where players can adopt, care for, and interact with magical creatures. Each pet has a hunger system that gradually decreases over time, encouraging regular feeding to keep them happy and healthy.
 
-**Live Demo:** [PetRealm on Vercel] (https://petrealm.vercel.app/)
+**Live Demo:** [PetRealm on Vercel](https://petrealm.vercel.app/)
 
 ---
 
@@ -25,6 +25,6 @@ PetRealm is a virtual mythical pet simulation where players can adopt, care for,
 - PostgreSQL (AWS RDS): Stores pet data with persistence across sessions.
 
 ### Deployment & CI/CD (in progress)
-- Current hosting platform for the frontend.
+- Vercel: Current hosting platform for the frontend.
 - Serverless Framework: Simplifies deployment of backend resources to AWS.  
 - AWS Amplify: In progress — migrating frontend hosting to Amplify with CI/CD.
