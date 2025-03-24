@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "serverless offline",
-    "dev": "nodemon --exec 'serverless offline --httpPort 3001'"
+    "dev": "nodemon --exec 'serverless offline --httpPort 3001'",
+    "deploy": "export $(cat .env | xargs) && serverless deploy"
   },
   "dependencies": {
     "cors": "^2.8.5",

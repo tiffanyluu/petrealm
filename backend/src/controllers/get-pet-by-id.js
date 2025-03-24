@@ -1,3 +1,5 @@
+// Fetches a pet profile by its ID from the database.
+
 const pool = require('../config');
 
 exports.getPetById = async (id) => {

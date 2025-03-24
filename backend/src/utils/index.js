@@ -1,3 +1,9 @@
+/**
+ * Provides utility functions for logging and metrics.  
+ * - Sets up a Winston logger with CloudWatch integration for tracking pet actions.  
+ * - Includes sendMetric to publish custom metrics to AWS CloudWatch.  
+ */
+
 const { createLogger, format, transports } = require('winston');
 const WinstonCloudWatch = require('winston-aws-cloudwatch');
 const AWS = require('aws-sdk');

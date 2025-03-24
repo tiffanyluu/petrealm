@@ -1,3 +1,8 @@
+/**
+ * Sets up global styles, fonts, and metadata for the app. 
+ * Wraps all pages with a root layout to ensure consistent structure.
+ */
+
 import './globals.css'
 import { Inter } from 'next/font/google';
 

@@ -1,3 +1,5 @@
+// Button component to feed pet.
+
 export default function FeedButton({ onClick }) {
     return (
       <button

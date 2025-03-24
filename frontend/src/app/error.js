@@ -1,3 +1,5 @@
+// Error landing page.
+
 "use client";
 
 export default function ErrorPage({ error, reset }) {

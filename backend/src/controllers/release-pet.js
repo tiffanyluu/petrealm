@@ -1,3 +1,5 @@
+// Releases a pet by removing its record from the database.
+
 const pool = require('../config');
 
 exports.releasePet = async (id) => {

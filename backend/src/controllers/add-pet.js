@@ -1,3 +1,8 @@
+/**
+ * Adds a new pet to the database with a given name and a randomly assigned type. 
+ * Newly added pets start with 100% hunger.
+ */
+
 const pool = require('../config');
 const petTypes = ["Dragon", "Unicorn", "Phoenix", "Griffin", "Pegasus"];
 

@@ -1,3 +1,5 @@
+// This file sets up the PostgreSQL database connection using environment variables.
+
 const path = require("path");
 require('dotenv').config();
 
@@ -11,5 +13,4 @@ const pool = new Pool({
     database: process.env.DB_DATABASE,
     ssl: { rejectUnauthorized: false }
 });
-
 module.exports = pool;

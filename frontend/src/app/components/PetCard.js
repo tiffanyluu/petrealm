@@ -1,3 +1,8 @@
+/**
+ * PetCard component shows pet's image, type, name, and hunger level. 
+ * Players can click to view details.
+ */
+
 import HungerBar from './HungerBar.js';
 import PetImage from './PetImage.js';
 

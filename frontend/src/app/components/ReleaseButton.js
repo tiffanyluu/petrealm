@@ -1,3 +1,6 @@
+// ReleaseButton component handles releasing a pet and triggers a callback on success.
+
+
 export default function ReleaseButton ({ petId, onRelease }) {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 

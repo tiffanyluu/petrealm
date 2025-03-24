@@ -1,3 +1,8 @@
+/**
+ * Displays the pet's hunger level as a colored progress bar. 
+ * Green = full, yellow = moderate, red = low.
+ */
+
 export default function HungerBar({ hunger }) {
     const barWidth = `${hunger}%`;
     const getBarColor = () => {

@@ -1,3 +1,7 @@
+/**
+ * Express router for handling pet-related API routes.
+ */
+
 const express = require('express');
 const router = express.Router();
 const petController = require('../controllers');

@@ -1,3 +1,10 @@
+/**
+ * This file defines the HomePage component, the main page of PetRealm.
+ * It fetches all pets from the backend when the page loads and displays them in a grid.
+ * Each pet is shown using the PetCard component, and clicking a pet takes you to its profile page.
+ * There’s also a button to adopt a new pet that links to the adoption page.
+ */
+
 "use client"
 
 import { useEffect, useState } from 'react';

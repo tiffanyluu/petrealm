@@ -1,3 +1,9 @@
+/**
+ * This page is a dynamic route, where the pet ID is extracted from the URL to fetch and display details for each unique pet. 
+ * It handles actions like feeding and releasing the pet, ensuring the UI updates accordingly.
+*/
+
+
 "use client";
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from "next/navigation";

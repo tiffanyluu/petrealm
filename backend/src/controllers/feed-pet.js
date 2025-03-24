@@ -1,3 +1,8 @@
+/**
+ * Increases a pet's hunger level by 10, up to a maximum of 100%.
+ * Returns the updated pet profile or null if no pet with the given ID is found.
+ */
+
 const pool = require('../config');
 
 exports.feedPet = async (id) => {

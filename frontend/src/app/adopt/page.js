@@ -1,3 +1,8 @@
+/**
+ * Adoption page where players can name and adopt a new pet.
+ * Handles form submission and redirects to home page after adoption.
+ */
+
 "use client"
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';

@@ -1,3 +1,5 @@
+// Fetches all pet profiles from the database.
+
 const pool = require('../config');
 
 exports.getAllPets = async () => {

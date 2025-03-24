@@ -72,11 +72,11 @@ provider:
   deploymentBucket:
     name: petrealm-serverless-deployments
   environment:
-    DB_HOST: pets.c1asi2ku8ijs.us-east-2.rds.amazonaws.com
-    DB_PORT: 5432
-    DB_DATABASE: pets
-    DB_USER: petslogin
-    DB_PASSWORD: cYo4oGdBnbQJQqAFC5kN
+    DB_HOST: ${env:DB_HOST}
+    DB_PORT: ${env:DB_PORT}
+    DB_DATABASE: ${env:DB_DATABASE}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
   iamRoleStatements:
     - Effect: "Allow"
       Action:

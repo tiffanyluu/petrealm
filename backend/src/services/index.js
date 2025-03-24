@@ -1,3 +1,9 @@
+/**
+ * Provides Lambda-compatible functions to handle API requests.  
+ * Calls controller functions and formats HTTP responses.  
+ * Includes operations for fetching, adding, feeding, releasing pets, and applying hunger decay.  
+ */
+
 const petController = require('../controllers');
 
 const createResponse = (statusCode, body) => ({

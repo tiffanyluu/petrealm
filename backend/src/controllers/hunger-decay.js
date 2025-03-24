@@ -1,3 +1,8 @@
+/**
+ * Applies hunger decay to all pets by decreasing their hunger value by 5, with a minimum value of 0.
+ * Logs the process and sends metrics to CloudWatch.
+ */
+
 const pool = require('../config');
 const { logger, sendMetric } = require('../utils');
 

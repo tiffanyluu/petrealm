@@ -1,3 +1,8 @@
+/** 
+ * Express server that handles pet routes under "/api".  
+ * Listens on the specified port (defaults to 3000).  
+*/
+
 const express = require('express');
 const app = express();
 const petRoutes = require('./routes');
