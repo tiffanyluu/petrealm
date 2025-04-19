@@ -1,7 +1,5 @@
 # 🐉 PetRealm
 
-## Project Overview
-
 PetRealm is a virtual mythical pet simulation where players can adopt, care for, and interact with magical creatures. Each pet has a hunger system that gradually decreases over time, encouraging regular feeding to keep them happy and healthy.
 
 <p align="center">
@@ -31,8 +29,6 @@ Deployment & CI/CD (in progress)
 - Vercel: Current hosting platform for the frontend.
 - Serverless Framework: Simplifies deployment of backend resources to AWS.
 - AWS Amplify: In progress — migrating frontend hosting to Amplify with CI/CD.
-
----
 
 ## Future Plans
 
