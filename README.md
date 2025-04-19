@@ -5,7 +5,6 @@
 PetRealm is a virtual mythical pet simulation where players can adopt, care for, and interact with magical creatures. Each pet has a hunger system that gradually decreases over time, encouraging regular feeding to keep them happy and healthy.
 
 <p align="center">
-  <img src="images/homepage.png" alt="home page" width="300"/>
   <img src="images/pet-profile.png" alt="pet profile" width="300"/>
 </p>
 
