@@ -99,7 +99,8 @@
     "xtend": "^4.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test vitest",
+    "test:watch": "cross-env NODE_ENV=test vitest --watch",
     "start": "serverless offline",
     "dev": "nodemon --exec 'serverless offline'"
   },
@@ -107,6 +108,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@vitejs/plugin-react": "^4.7.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.1.4",
+    "vitest": "^3.2.4"
   }
 }

@@ -1,12 +1,7 @@
-/**
- * PetImage component displays a pet's image.
- * Includes bouncing animation when pet is fed.
- */
+"use client";
 
-"use client"
-
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const PetImage = ({ type, isBouncing = false }) => {
   return (
