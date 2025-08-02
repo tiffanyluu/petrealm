@@ -1,4 +1,3 @@
-// playwright.config.js
 import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
@@ -18,7 +17,8 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: "cd .. && npm run dev",
+      command:
+        "cd .. && SLS_DISABLE_AUTO_UPDATE=true SLS_TELEMETRY_DISABLED=true npm run dev:e2e",
       port: 3001,
       reuseExistingServer: !process.env.CI,
     },

@@ -2,6 +2,7 @@
   "scripts": {
     "start": "serverless offline",
     "dev": "nodemon --exec 'serverless offline --httpPort 3001'",
+    "dev:e2e": "serverless offline --httpPort 3001 --stage local --host 0.0.0.0",
     "deploy": "export $(cat .env | xargs) && serverless deploy"
   },
   "dependencies": {
