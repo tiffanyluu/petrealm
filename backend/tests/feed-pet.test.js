@@ -1,18 +1,14 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect } from "vitest";
 import { addPet } from "../src/controllers/add-pet.js";
 import { feedPet } from "../src/controllers/feed-pet.js";
 import pool from "../src/config/index.js";
 
 describe("feedPet Controller", () => {
-  let testPet;
-
-  beforeEach(async () => {
-    testPet = await addPet("TestPet");
-  });
-
   it("should increase pet hunger by 10", async () => {
+    const testPet = await addPet("TestHungerIncrease");
+
     const updateResult = await pool.query(
-      "UPDATE public.pet_profiles SET hunger = 50 WHERE id = $1 RETURNING hunger",
+      "UPDATE public.pet_profiles SET hunger = 50 WHERE id = $1 RETURNING *",
       [testPet.id]
     );
 
@@ -21,19 +17,23 @@ describe("feedPet Controller", () => {
 
     const result = await feedPet(testPet.id);
     expect(result).not.toBeNull();
-    expect(result.hunger).toBe(60);
+    expect(result.hunger).toBe(60); // 50 + 10 = 60
     expect(result.id).toBe(testPet.id);
   });
 
   it("should cap hunger at 100 when feeding full pet", async () => {
+    const testPet = await addPet("TestCapFull");
+
     const result = await feedPet(testPet.id);
     expect(result).not.toBeNull();
     expect(result.hunger).toBe(100);
   });
 
   it("should cap hunger at 100 when near limit", async () => {
+    const testPet = await addPet("TestCapLimit");
+
     const updateResult = await pool.query(
-      "UPDATE public.pet_profiles SET hunger = 95 WHERE id = $1 RETURNING hunger",
+      "UPDATE public.pet_profiles SET hunger = 95 WHERE id = $1 RETURNING *",
       [testPet.id]
     );
 

@@ -6,5 +6,11 @@ export default defineConfig({
     environment: "node",
     globals: true,
     setupFiles: ["./tests/setup.js"],
+    pool: "threads",
+    poolOptions: {
+      threads: {
+        singleThread: true,
+      },
+    },
   },
 });

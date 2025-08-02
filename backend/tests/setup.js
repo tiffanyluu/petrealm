@@ -34,7 +34,9 @@ beforeAll(async () => {
 });
 
 afterEach(async () => {
-  await pool.query("DELETE FROM public.pet_profiles WHERE name LIKE 'Test%'");
+  await pool.query(
+    "DELETE FROM public.pet_profiles WHERE name LIKE 'TestFluffy%' OR name LIKE 'TestCap%' OR name LIKE 'TestHunger%'"
+  );
 });
 
 afterAll(async () => {
