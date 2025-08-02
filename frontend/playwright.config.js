@@ -23,7 +23,7 @@ export default defineConfig({
       reuseExistingServer: !process.env.CI,
     },
     {
-      command: "cp .env.test .env.local && npm run dev",
+      command: "npm run dev",
       port: 3000,
       reuseExistingServer: !process.env.CI,
     },
