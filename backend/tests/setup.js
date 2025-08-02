@@ -16,7 +16,7 @@ vi.mock("aws-sdk", () => ({
   config: { update: vi.fn() },
 }));
 
-vi.mock("../utils/index.js", () => ({
+vi.mock("../src/utils/index.js", () => ({
   logger: mockLogger,
   sendMetric: vi.fn(),
 }));

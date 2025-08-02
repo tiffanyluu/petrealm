@@ -11,32 +11,48 @@ describe("feedPet Controller", () => {
   });
 
   it("should increase pet hunger by 10", async () => {
-    await pool.query(
-      "UPDATE public.pet_profiles SET hunger = 50 WHERE id = $1",
+    const updateResult = await pool.query(
+      "UPDATE public.pet_profiles SET hunger = 50 WHERE id = $1 RETURNING hunger",
       [testPet.id]
     );
+
+    expect(updateResult.rows).toHaveLength(1);
+    expect(updateResult.rows[0].hunger).toBe(50);
 
     const result = await feedPet(testPet.id);
     expect(result).not.toBeNull();
     expect(result.hunger).toBe(60);
+    expect(result.id).toBe(testPet.id);
   });
 
-  it("should cap hunger at 100", async () => {
-    await pool.query(
-      "UPDATE public.pet_profiles SET hunger = 95 WHERE id = $1",
+  it("should cap hunger at 100 when feeding full pet", async () => {
+    const result = await feedPet(testPet.id);
+    expect(result).not.toBeNull();
+    expect(result.hunger).toBe(100);
+  });
+
+  it("should cap hunger at 100 when near limit", async () => {
+    const updateResult = await pool.query(
+      "UPDATE public.pet_profiles SET hunger = 95 WHERE id = $1 RETURNING hunger",
       [testPet.id]
     );
 
+    expect(updateResult.rows).toHaveLength(1);
+    expect(updateResult.rows[0].hunger).toBe(95);
+
     const result = await feedPet(testPet.id);
+    expect(result).not.toBeNull();
     expect(result.hunger).toBe(100);
   });
 
   it("should throw error when pet ID is missing", async () => {
     await expect(feedPet()).rejects.toThrow("Pet ID is required");
+    await expect(feedPet("")).rejects.toThrow("Pet ID is required");
+    await expect(feedPet(null)).rejects.toThrow("Pet ID is required");
   });
 
   it("should return null for non-existent pet", async () => {
-    const result = await feedPet(999);
+    const result = await feedPet(999999);
     expect(result).toBeNull();
   });
 });
