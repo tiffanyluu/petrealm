@@ -24,17 +24,8 @@ Database
 
 - PostgreSQL (AWS RDS): Stores pet data with persistence across sessions.
 
-Deployment & CI/CD (in progress)
+Deployment & CI/CD
 
-- Vercel: Current hosting platform for the frontend.
-- Serverless Framework: Simplifies deployment of backend resources to AWS.
-- AWS Amplify: In progress — migrating frontend hosting to Amplify with CI/CD.
-
-## Future Plans
-
-- **User Accounts:** Implement user authentication to give each player their own unique instance of the game, ensuring pets aren’t shared across all players.  
-- **New Features:** Expand gameplay with fun additions, such as:
-    - Introduce a "Mood" stat influenced by hunger levels and feeding. Happy pets could have little sparkle effects, while neglected pets might look sad.
-    - Let players choose different backgrounds for their pet profile.
-    - More variety of mythical pets.
-    - Option to change current pet name.
+- Vercel: Frontend hosting platform with automatic deployments on push to main branch.
+- Serverless Framework: Manages deployment of backend resources to AWS Lambda and API Gateway.
+- GitHub Actions: Automated CI/CD pipeline with unit tests and E2E tests before deployment.
