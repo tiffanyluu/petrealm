@@ -6,8 +6,6 @@ PetRealm is a virtual mythical pet simulation where players can adopt, care for,
   <img src="images/img.png" alt="pet profile"/>
 </p>
 
-## **Live Demo:** [PetRealm](https://petrealm.vercel.app/)
-
 ### Tech Stack
 
 Frontend
